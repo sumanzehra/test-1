@@ -1,0 +1,17 @@
+version: '3'
+services:
+  myapp-prod:
+    image: nginx:latest
+    container_name: myapp-prod
+    ports:
+      - "8084:80"
+    volumes:
+      - ./web-prod:/usr/share/nginx/html
+
+  myapp-dev:
+    image: nginx:latest
+    container_name: myapp-dev
+    ports:
+      - "8086:80"
+    volumes:
+      - ./web-dev:/usr/share/nginx/html
